@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
+
 from webapp.models import Photography
 
 
@@ -8,5 +9,8 @@ class IndexView(ListView):
     template_name = 'index.html'
     ordering = ['-created_date']
 
-    # def get_queryset(self):
-    #     return Photography.objects.filter(created_date=)
+
+class PhotoView(DetailView):
+    template_name = "photo/detail.html"
+    model = Photography
+

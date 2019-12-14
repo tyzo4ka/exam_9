@@ -1,0 +1,17 @@
+.img-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: #e83e8ccc;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-top-left-radius: 16px;
+}
