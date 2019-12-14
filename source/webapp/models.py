@@ -31,7 +31,7 @@ class Like(models.Model):
                                     verbose_name="Фотография")
     like_author = models.ForeignKey(User, on_delete=models.PROTECT, null=False, blank=False, related_name="like",
                                     verbose_name="Автор лайка")
-    like = models.BooleanField(default=False)
+    like = models.BooleanField(default=False, verbose_name="Лайк")
 
     def __str__(self):
         return self.like

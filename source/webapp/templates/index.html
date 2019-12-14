@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Gallery{% endblock %}
+{% block content %}
+    <div class="row">
+        {% for photo in photography_list %}
+            <div class="col col-3">
+                <div class="card">
+                    {% if photo.photo %}
+                        <img src="{{ product.photo.url }}" class="card-img-top" alt="{{ photo.caption }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ photo.rating }}</h5>
+                        <p class="card-text">{{ photo.caption }}</p>
+                        <p class="card-author">{{ photo.photo_author }}</p>
+                        <p class="card-date">{{ photo.created_date }}</p>
+{#                        <a href="{% url "#" photo.pk %}"#}
+                           class="btn btn-primary">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
