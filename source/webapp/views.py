@@ -1,4 +1,6 @@
 from django.contrib.auth import authenticate
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -18,7 +20,7 @@ class PhotoView(DetailView):
     template_name = "photo/detail.html"
 
 
-class PhotoCreateView(CreateView):
+class PhotoCreateView(LoginRequiredMixin, CreateView):
     model = Photography
     template_name = 'photo/create.html'
     fields = ("photo", "caption")
@@ -37,6 +39,13 @@ class PhotoUpdateView(UpdateView):
     template_name = 'photo/update.html'
     fields = ('photo', 'caption')
 
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('accounts:login')
+        if not request.user.has_perm('webapp.change_photography') or self.object.author != request.user.pk:
+            raise PermissionDenied('403 Forbidden')
+        return super().dispatch(request, *args, **kwargs)
+
     def get_success_url(self):
         return reverse('webapp:photo_view', kwargs={'pk': self.object.pk})
 
@@ -45,8 +54,17 @@ class PhotoDeleteView(DeleteView):
     model = Photography
     template_name = 'photo/delete.html'
 
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('accounts:login')
+        if not request.user.has_perm('webapp.delete_photography') or self.object.author != request.user:
+            raise PermissionDenied('403 Forbidden')
+        return super().dispatch(request, *args, **kwargs)
+
     def get_success_url(self):
         return reverse('webapp:index')
+
+
 
 
 def login_view(request):

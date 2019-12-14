@@ -6,7 +6,7 @@ from api import views
 
 router = routers.DefaultRouter()
 router.register(r'comments', views.CommentsViewSet)
-# router.register(r'issues', views.IssueViewSet)
+router.register(r'like', views.LikeViewSet)
 
 
 app_name = 'api'
