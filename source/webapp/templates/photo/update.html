@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Update Photo{% endblock %}
 {% block content %}
-    <h1>Update Issue</h1>
-    <form method="POST" action="{% url "webapp:photo_update" photography.pk %}">
-        {% include 'partial/form.html' with button_text="Update" %}
-    </form>
+    <div class="caption-confirmation">
+        <h1>Update Photo</h1>
+    </div>
+    <div class="centered-buttons">
+        <form method="POST" action="{% url "webapp:photo_update" photography.pk %}">
+            {% include 'partial/form.html' with button_text="Update" %}
+        </form>
+    </div>
 {% endblock %}

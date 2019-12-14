@@ -1,36 +1,25 @@
 {% extends 'base.html' %}
-
 {% block title %}Gallery{% endblock %}
-
 {% block content %}
-
-    <div class="row row-cols-1 row-cols-md-3">
-
+    <div class="card-columns">
         {% for photo in photography_list %}
-            <div class="col mb-4">
-
-                <div class="card" style="width: 22rem; display: inline-block">
-                    <div class="img-container">
-                        <img src="{{ photo.photo.url }}" class="card-img-top" alt="{{ photo.caption }}">
-                        <div class="bottom-right">
-                            <p class="card-text">♥ {{ photo.rating }}</p>
-                        </div>
+            <div class="card" style="width: 22rem; display: inline-block">
+                <div class="img-container">
+                    <img src="{{ photo.photo.url }}" class="card-img-top" alt="{{ photo.caption }}">
+                    <div class="bottom-right">
+                        <p class="card-text">♥ {{ photo.rating }}</p>
                     </div>
-
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="#" class="stretched-link text-dark">{{ photo.caption }}</a>
-                        </h5>
-                        <p class="card-text"><small
-                                class="text-muted">By {{ photo.photo_author }} {{ photo.created_date|date:'H:i d.m.Y' }} </small>
-                        </p>
-
-                    </div>
-
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="{% url 'webapp:photo_view' photo.pk %}"
+                           class="stretched-link text-dark">{{ photo.caption }}</a>
+                    </h5>
+                    <p class="card-text"><small
+                            class="text-muted">By {{ photo.photo_author }} {{ photo.created_date|date:'H:i d.m.Y' }} </small>
+                    </p>
                 </div>
             </div>
-
         {% endfor %}
-
     </div>
 {% endblock %}

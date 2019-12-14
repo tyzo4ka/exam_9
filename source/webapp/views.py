@@ -24,31 +24,12 @@ class PhotoCreateView(CreateView):
     fields = ("photo", "caption")
 
     def form_valid(self, form):
-        self.object = Photography.objects.create(photo=form.cleaned_data["photo"], caption=form.cleaned_data["caption"], photo_author=self.request.user)
+        self.object = Photography.objects.create(photo=form.cleaned_data["photo"], caption=form.cleaned_data["caption"],
+                                                 photo_author=self.request.user)
         return HttpResponseRedirect(self.get_success_url())
 
     def get_success_url(self):
         return reverse("webapp:photo_view", kwargs={"pk": self.object.pk})
-
-    # def form_valid(self, form):
-    #     print("hhhfhhf")
-    #     author = self.request.user
-    #     photo = form.cleaned_data["photo"]
-    #     caption = form.cleaned_data["caption"]
-    #     self.object = Photography.objects.create(photo_author=author, photo=photo, caption=caption)
-    #     # form.save()
-
-        # return reverse("webapp:photo_view", kwargs={"pk": self.object.pk})
-
-    # def add_author_to_photo(self, form):
-    #     author = self.request.user
-    #     photo = form.cleaned_data["photo"]
-    #     caption = form.cleaned_data["caption"]
-    #     self.object = Photography.objects.create(author=author, photo=photo, caption=caption)
-    #     form.save()
-    #     print(author)
-    #     print(self.object)
-    #     return self.get_success_url()
 
 
 class PhotoUpdateView(UpdateView):

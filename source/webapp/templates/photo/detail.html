@@ -1,50 +1,43 @@
 {% extends 'base.html' %}
 {% block title %}{{ photography.caption }}{% endblock %}
 {% block content %}
-
     <div class="row">
         <div class="col-8">
             <div class="img-caption">
                 <h5>{{ photography.caption }}</h5>
             </div>
         </div>
-
         <div class="col-4">
-            {#            <div class="img-caption">#}
-            {#            </div>#}
         </div>
-
         <div class="col-8">
             <img src="{{ photography.photo.url }}" class="img-fluid" alt="{{ photography.caption }}">
         </div>
-
         <div class="col-4">
-            <p><b>Author: </b> {{ photography.photo_author }}</p>
-            <p class="card-date">Date upload: {{ photography.created_date|date:'d.m.Y' }}</p>
-            <h5 class="card-title">&#9829; {{ photography.rating }}</h5>
-        </div>
-    </div>
-
-    <div class="row">
-    <div class="col-8">
-
-        <div class="img-caption">
-            <h5>Comments:</h5>
-        </div>
-
-        {% for comment in photography.comments.all %}
-
-            <div class="card border-light">
-                <div class="card-header"><small class="text-muted">{{ comment.comments_author }}
-                    at {{ comment.created_date|date:'d.m.Y H:i:s' }}</small></div>
-                <div class="card-body">
-                    <p class="card-text">{{ comment.text }}</p>
-                </div>
+            <div>
+                <p><b>Author: </b> {{ photography.photo_author }}</p>
+                <p class="card-date">Date upload: {{ photography.created_date|date:'d.m.Y' }}</p>
+                <h5 class="card-title">&#9829; {{ photography.rating }}</h5>
+                <a class="btn btn-success" href="{% url 'webapp:photo_update' photography.pk %}">Edit Image</a>
+                <a class="btn btn-outline-secondary" href="{% url 'webapp:photo_delete' photography.pk %}">Delete
+                    Image</a>
             </div>
-
-        {% endfor %}
-
+        </div>
     </div>
+    <div class="row">
+        <div class="col-8">
+            <div class="img-caption">
+                <h5>Comments:</h5>
+            </div>
+            {% for comment in photography.comments.all %}
+                <div class="card border-light">
+                    <div class="card-header"><small class="text-muted">{{ comment.comments_author }}
+                        at {{ comment.created_date|date:'d.m.Y H:i:s' }}</small></div>
+                    <div class="card-body">
+                        <p class="card-text">{{ comment.text }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-
 {% endblock %}
+

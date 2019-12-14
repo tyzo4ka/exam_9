@@ -11,6 +11,20 @@
     padding-left: 16px;
 }
 
+.caption-confirmation {
+    /*background-color: #eeeeee;*/
+    padding-top: 40px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    text-align: center;
+}
+
+.centered-buttons {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
 .comments-caption {
     background-color: #eeeeee;
     padding-top: 20px;
@@ -28,39 +42,4 @@
     padding-left: 16px;
     padding-right: 16px;
     border-top-left-radius: 16px;
-}
-
-.heart-shape {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    background-color: rgba(250, 184, 66, 1);
-}
-
-.heart-shape:before,
-.heart-shape:after {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    content: '';
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-    background-color: rgba(250, 184, 66, 1);
-}
-
-.heart-shape:before {
-    bottom: 0px;
-    left: -40px;
-}
-
-.heart-shape:after {
-    top: -40px;
-    right: 0px;
 }
