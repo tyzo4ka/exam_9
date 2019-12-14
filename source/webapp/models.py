@@ -26,6 +26,15 @@ class Comments(models.Model):
         return self.text
 
 
+class Like(models.Model):
+    photography = models.ForeignKey("webapp.Photography", related_name="like", on_delete=models.CASCADE,
+                                    verbose_name="Фотография")
+    like_author = models.ForeignKey(User, on_delete=models.PROTECT, null=False, blank=False, related_name="like",
+                                    verbose_name="Автор лайка")
+    like = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.like
 
 
 
