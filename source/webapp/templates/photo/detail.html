@@ -1,29 +1,50 @@
 {% extends 'base.html' %}
 {% block title %}{{ photography.caption }}{% endblock %}
 {% block content %}
-<div class="text-center">
-    <h1>{{ photography.caption }}</h1>
+
     <div class="row">
-        <div class="col col-12 col-sm-10 col-md-8 col-lg-6 m-auto">
+        <div class="col-8">
+            <div class="img-caption">
+                <h5>{{ photography.caption }}</h5>
+            </div>
+        </div>
+
+        <div class="col-4">
+            {#            <div class="img-caption">#}
+            {#            </div>#}
+        </div>
+
+        <div class="col-8">
             <img src="{{ photography.photo.url }}" class="img-fluid" alt="{{ photography.caption }}">
         </div>
+
+        <div class="col-4">
+            <p><b>Author: </b> {{ photography.photo_author }}</p>
+            <p class="card-date">Date upload: {{ photography.created_date|date:'d.m.Y' }}</p>
+            <h5 class="card-title">&#9829; {{ photography.rating }}</h5>
+        </div>
     </div>
-    <h5 class="card-title">&#9829; {{ photo.rating }}</h5>
-    <p><b>Created by:</b> {{ photography.photo_author }}</p>
-    <p class="card-text">{{ photography.caption }}</p>
-    <p class="card-date">{{ photo.created_date|date:'H:i d.m.Y' }}</p>
 
-    {#        <p><a href="{% url 'webapp:basket_change' %}?pk={{ product.pk }}&action=add&next={% url "webapp:product_detail" product.pk %}" class="btn btn-primary">В корзину</a></p>#}
-    {#        <p><a href="{% url 'webapp:product_update' product.pk %}" class="btn btn-primary">Изменить</a></p>#}
-    {#        <p><a href="{% url 'webapp:product_delete' product.pk %}" class="btn btn-danger">Нет в наличии</a></p>#}
-</div>
+    <div class="row">
+    <div class="col-8">
 
+        <div class="img-caption">
+            <h5>Comments:</h5>
+        </div>
 
-<h3>Comments:</h3>
-{% for comment in photography.comments.all %}
-    <div class="comment">
-                <p>{{ comment.comments_author }} commented at {{ comment.created_date|date:'d.m.Y H:i:s' }}</p>
-                <div class="text">{{ comment.text }}</div>
+        {% for comment in photography.comments.all %}
+
+            <div class="card border-light">
+                <div class="card-header"><small class="text-muted">{{ comment.comments_author }}
+                    at {{ comment.created_date|date:'d.m.Y H:i:s' }}</small></div>
+                <div class="card-body">
+                    <p class="card-text">{{ comment.text }}</p>
+                </div>
             </div>
-{% endfor %}
+
+        {% endfor %}
+
+    </div>
+    </div>
+
 {% endblock %}

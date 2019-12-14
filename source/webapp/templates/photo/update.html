@@ -2,7 +2,7 @@
 {% block title %}Update Photo{% endblock %}
 {% block content %}
     <h1>Update Issue</h1>
-    <form method="POST" action="{% url "webapp:pho" issue.pk %}">
+    <form method="POST" action="{% url "webapp:photo_update" photography.pk %}">
         {% include 'partial/form.html' with button_text="Update" %}
     </form>
 {% endblock %}

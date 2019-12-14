@@ -21,7 +21,7 @@ class PhotoView(DetailView):
 class PhotoCreateView(CreateView):
     model = Photography
     template_name = 'photo/create.html'
-    fields = ("photo", "caption", "photo_author")
+    fields = ("photo", "caption")
 
     def form_valid(self, form):
         self.object = Photography.objects.create(photo=form.cleaned_data["photo"], caption=form.cleaned_data["caption"], photo_author=self.request.user)
@@ -66,7 +66,6 @@ class PhotoDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('webapp:index')
-
 
 
 def login_view(request):

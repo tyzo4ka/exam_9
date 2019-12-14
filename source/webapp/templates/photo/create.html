@@ -2,7 +2,9 @@
 {% block title %}Create Photo{% endblock %}
 {% block content %}
     <h1>Create Photo</h1>
-    <form method="POST" action="{% url "webapp:photo_add" %}">
-        {% include 'partial/form.html' with button_text='Create' %}
+    <form method="POST" action="{% url 'webapp:photo_add' %}" enctype="multipart/form-data">
+
+        {% include 'partial/form.html' with button_text='Upload' %}
+
     </form>
 {% endblock %}
