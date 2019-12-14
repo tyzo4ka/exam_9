@@ -18,6 +18,138 @@
   }
 },
 {
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$kzJlEzAzrVUv$U9k1Zdgm0BNAZNHjDH32DBTJRT+PKW2qcUjX66p+vEk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Ev",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-12-14T08:33:26.627Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$Q4mjiVHVoWoc$czl66NXZGDf7QbXEgZ3cCvp9oE0izg00Mnv5hsHAgRg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Harry",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-12-14T08:34:26.074Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$l7wi2mad8SxM$A/wWpHFwUP6ID7L6bvXjINAjjUuisqrCkmf3APhGIgs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Ann",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-12-14T08:34:51.981Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$G3h7Qm88JQhC$Ut22RSwMM4gRvefSkO/AaSCfFwOc/kQHXqYKWG9GmPk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Max",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-12-14T08:35:43.918Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "webapp.comments",
+  "pk": 1,
+  "fields": {
+    "text": "The historical museum at night - just beautiful!",
+    "photography": 3,
+    "comments_author": 4,
+    "created_date": "2019-12-14T08:37:02.820Z"
+  }
+},
+{
+  "model": "webapp.comments",
+  "pk": 2,
+  "fields": {
+    "text": "Nice)",
+    "photography": 3,
+    "comments_author": 5,
+    "created_date": "2019-12-14T08:38:13.041Z"
+  }
+},
+{
+  "model": "webapp.comments",
+  "pk": 3,
+  "fields": {
+    "text": "night is beautiful as always",
+    "photography": 3,
+    "comments_author": 3,
+    "created_date": "2019-12-14T08:38:48.644Z"
+  }
+},
+{
+  "model": "webapp.comments",
+  "pk": 4,
+  "fields": {
+    "text": "let me try))",
+    "photography": 2,
+    "comments_author": 5,
+    "created_date": "2019-12-14T08:41:58.205Z"
+  }
+},
+{
+  "model": "webapp.comments",
+  "pk": 5,
+  "fields": {
+    "text": "Do not drink there much.",
+    "photography": 2,
+    "comments_author": 3,
+    "created_date": "2019-12-14T08:44:38.932Z"
+  }
+},
+{
+  "model": "webapp.comments",
+  "pk": 6,
+  "fields": {
+    "text": "Artificial grass? Is it definitely summer?",
+    "photography": 1,
+    "comments_author": 4,
+    "created_date": "2019-12-14T08:45:08.142Z"
+  }
+},
+{
   "model": "webapp.photography",
   "pk": 1,
   "fields": {

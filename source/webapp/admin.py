@@ -8,7 +8,7 @@ class PhotoAdmin(admin.ModelAdmin):
 
 
 class CommentsAdmin(admin.ModelAdmin):
-    fields = ("id", "text", "photography", "comments_author", "created_date")
+    fields = ("text", "photography", "comments_author")
     list_filter = ("created_date",)
 
 

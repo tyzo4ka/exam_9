@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Delete Photo{% endblock %}
+{% block content %}
+    <h1>Are you sure want to delete photo "{{ photography }}"?</h1>
+    <form method="POST" action="{% url "webapp:photo_delete" photography.pk %}" class="text-center">
+        {% csrf_token %}
+        <p><input type="submit" value="Confirm" class="btn btn-danger"></p>
+        <p><a href="{% url 'webapp:photo_view' photography.pk %}" class="btn btn-default">Cancel</a></p>
+    </form>
+{% endblock %}
