@@ -1,0 +1,53 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$SjVzcJ06eDtd$qlGWAyWkEnZiWiK918Dq4WywpNOkFgX3htdsW8FiY/A=",
+    "last_login": "2019-12-14T06:50:06.582Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-12-14T01:56:13.665Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "webapp.photography",
+  "pk": 1,
+  "fields": {
+    "photo": "photo/IMG_5088-1.jpg",
+    "caption": "Summer time",
+    "created_date": "2019-12-14T07:01:57.987Z",
+    "rating": 0,
+    "photo_author": 1
+  }
+},
+{
+  "model": "webapp.photography",
+  "pk": 2,
+  "fields": {
+    "photo": "photo/FullSizeRender.jpg",
+    "caption": "yammy cocktail",
+    "created_date": "2019-12-14T07:04:17.590Z",
+    "rating": 0,
+    "photo_author": 1
+  }
+},
+{
+  "model": "webapp.photography",
+  "pk": 3,
+  "fields": {
+    "photo": "photo/IMG_4276_2.JPG",
+    "caption": "Story in the night",
+    "created_date": "2019-12-14T07:05:28.242Z",
+    "rating": 0,
+    "photo_author": 1
+  }
+}
+]
